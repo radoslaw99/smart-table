@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Table
 
-## Getting Started
+A modern web application built with **Next.js** showcasing advanced table features combined with **user authentication** and **backend persistence**.
 
-First, run the development server:
+The project focuses on clean frontend architecture, state management, and secure user-based data storage.
+
+---
+
+## ✨ Features
+
+- User authentication (Sign up / Sign in)
+- Protected routes (authorized users only)
+- Interactive table:
+  - Sorting (asc / desc / reset)
+  - Group collapsing and expanding
+  - Dynamic footer calculations
+- Per-user data persistence
+- Clean, responsive UI
+- Live deployment
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js** (App Router)
+- **TypeScript**
+- **Custom CSS**
+- **Supabase** (Auth + PostgreSQL)
+- **Vercel** (deployment)
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/radoslaw99/smart-table.git
+cd smart-table
+npm install
+Create .env.local:
+
+env
+Skopiuj kod
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+Run locally:
+
+bash
+Skopiuj kod
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open:
+ http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ Authentication
+Authentication and authorization are handled by Supabase Auth.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Unauthenticated users are redirected to /login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Data access is secured using Row Level Security (RLS)
 
-## Learn More
+Each user can access only their own data
 
-To learn more about Next.js, take a look at the following resources:
+ Project Structure
+php
+Skopiuj kod
+app/        # Pages and layout (Next.js App Router)
+lib/        # Supabase client and auth helpers
+public/     # Static assets
+ Live Demo
+ https://smart-table-rust.vercel.app/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Notes
+This project demonstrates practical usage of:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+frontend frameworks
 
-## Deploy on Vercel
+authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+backend integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+deployment workflow
+
+Author: Radosław
