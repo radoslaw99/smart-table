@@ -1,82 +1,65 @@
-# Smart Table
+ Smart Table
 
-A modern web application built with **Next.js** showcasing advanced table features combined with **user authentication** and **backend persistence**.
+A web application built with Next.js that demonstrates advanced table functionality combined with user authentication and backend integration.
 
-The project focuses on clean frontend architecture, state management, and secure user-based data storage.
+The project focuses on sorting, grouping, collapsing table rows and securing access using Supabase authentication.
 
 ---
 
-## ✨ Features
+ Features
 
-- User authentication (Sign up / Sign in)
-- Protected routes (authorized users only)
+- User authentication (sign up / sign in)
+- Protected routes (only authenticated users can access the table)
 - Interactive table:
-  - Sorting (asc / desc / reset)
+  - Sorting (ascending / descending / reset)
   - Group collapsing and expanding
   - Dynamic footer calculations
 - Per-user data persistence
-- Clean, responsive UI
 - Live deployment
 
 ---
 
-## 🛠 Tech Stack
+ Tech Stack
 
-- **Next.js** (App Router)
-- **TypeScript**
-- **Custom CSS**
-- **Supabase** (Auth + PostgreSQL)
-- **Vercel** (deployment)
+- Next.js (App Router)
+- TypeScript
+- Custom CSS
+- Supabase (Authentication + PostgreSQL)
+- Vercel (deployment)
 
 ---
 
-## 🚀 Getting Started
+ Getting Started (Local)
 
 ```bash
 git clone https://github.com/radoslaw99/smart-table.git
 cd smart-table
 npm install
-Create .env.local:
+```
 
-env
-Skopiuj kod
+Create .env.local in the project root:
+
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+
 Run locally:
-
-bash
-Skopiuj kod
+```
 npm run dev
-Open:
- http://localhost:3000
+```
 
- Authentication
-Authentication and authorization are handled by Supabase Auth.
+Open: http://localhost:3000
+
+Authentication
+
+Authentication is handled by Supabase Auth.
 
 Unauthenticated users are redirected to /login
 
-Data access is secured using Row Level Security (RLS)
+Access to data is secured using Row Level Security (RLS)
 
 Each user can access only their own data
 
- Project Structure
-php
-Skopiuj kod
-app/        # Pages and layout (Next.js App Router)
-lib/        # Supabase client and auth helpers
-public/     # Static assets
- Live Demo
- https://smart-table-rust.vercel.app/
+Live Version
 
- Notes
-This project demonstrates practical usage of:
-
-frontend frameworks
-
-authentication
-
-backend integration
-
-deployment workflow
-
-Author: Radosław
+https://smart-table-rust.vercel.app/
